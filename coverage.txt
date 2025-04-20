@@ -1,0 +1,9 @@
+mode: set
+module_test/Hello/hello.go:5.58,6.16 1 1
+module_test/Hello/hello.go:6.16,8.3 1 0
+module_test/Hello/hello.go:10.2,12.18 2 1
+module_test/Hello/hello.go:13.17,14.19 1 1
+module_test/Hello/hello.go:15.17,16.18 1 0
+module_test/Hello/hello.go:17.16,18.19 1 0
+module_test/Hello/hello.go:19.10,20.64 1 0
+module_test/Hello/hello.go:23.2,23.33 1 1
