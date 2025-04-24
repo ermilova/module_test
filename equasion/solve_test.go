@@ -30,7 +30,7 @@ func TestSolveOne(t *testing.T) {
 	var A float64 = 1
 	var B float64 = 2
 	var C float64= 1
-	expected := [1]float64 {1}
+	expected := []float64 {-1}
 	actual, err := solve(A, B, C)
 
 	assert.Nil(t, err)
