@@ -3,6 +3,7 @@ package Solve
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
+	"math"
 )
 
 func TestSolveTwo(t *testing.T) {
