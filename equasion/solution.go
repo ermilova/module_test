@@ -6,15 +6,22 @@ import (
   
 func solve(a float64,b float64,c float64) ([]float64, error){
   result := make([]float64, 0, 3) 
-  if a == 0 { 
-    return result, errors.New("this is an error")
+  epsilon := 1e-9
+  if math.IsNaN(A) || math.IsNaN(B) || math.IsNaN(C) {
+    return result, errors.New("One of parameters is NaN")
+  }
+  if math.IsInf(A) || math.IsInf(B) || math.IsInf(C) {
+    return result, errors.New("One of paramets is Inf")
+  }
+  if math.Abs(a) < epsilon { 
+    return result, errors.New("a == 0")
   }
   d := b * b - 4 * a * c
-  if d == 0 {
+  if math.Abs(d) < epsilon {
     result = append(result, ((-1)* b) / (2 * a))
-  } else if d > 0 {
+  } else if !math.IsNaN(math.Sqrt(d)) {
     result = append(result, ((-1) * b - math.Sqrt(d)) / (2 * a))
-    result = append(result, ((-1) * b + math.Sqrt(d)) / (2 * a)) 
+    result = append(result, ((-1) * b + math.Sqrt(d)) / (2 * a))
   }
   return result, nil
 }
