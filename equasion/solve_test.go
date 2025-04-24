@@ -42,7 +42,7 @@ func TestSolveA(t *testing.T) {
 	var B float64 = 1
 	var C float64 = 1
 	
-	actual, err := solve(A, B, C)
+	_, err := solve(A, B, C)
 
-	assert.NilError(t, err)
+	assert.NotNil(t, err)
 }
