@@ -6,7 +6,7 @@ import (
   
 func solve(a float64,b float64,c float64) ([]float64, error){
   result := make([]float64, 0, 3) 
-  epsilon := 1e-9
+  epsilon := math.Nextafter(1.0,2.0)-1.0
   if math.IsNaN(a) || math.IsNaN(b) || math.IsNaN(c) {
     return result, errors.New("One of parameters is NaN")
   }
