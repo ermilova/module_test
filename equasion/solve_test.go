@@ -6,9 +6,9 @@ import (
 )
 
 func TestSolveTwo(t *testing.T) {
-	A := 1
-	B := 0
-	C := -1
+	var A float64 = 1
+	var B float64 = 0
+	var C float64 = -1
 	expected := []float64 {1, -1}
 	actual, err := solve(A, B, C)
 
@@ -16,9 +16,9 @@ func TestSolveTwo(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 func TestSolveZero(t *testing.T) {
-	A := 1
-	B := 0
-	C := 1
+	var A float64 = 1
+	var B float64 = 0
+	var C float64 = 1
 	expected := make([]float64, 0)
 	actual, err := solve(A, B, C)
 
@@ -27,9 +27,9 @@ func TestSolveZero(t *testing.T) {
 }
 
 func TestSolveOne(t *testing.T) {
-	A := 1
-	B := 2
-	C := 1
+	var A float64 = 1
+	var B float64 = 2
+	var C float64= 1
 	expected := [1]float64 {1}
 	actual, err := solve(A, B, C)
 
@@ -38,9 +38,9 @@ func TestSolveOne(t *testing.T) {
 }
 
 func TestSolveA(t *testing.T) {
-	A := 0
-	B := 1
-	C := 1
+	var A float64 = 0
+	var B float64 = 1
+	var C float64 = 1
 	
 	actual, err := solve(A, B, C)
 
