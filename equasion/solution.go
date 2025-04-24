@@ -1,4 +1,4 @@
-package main
+package Solve
 import "errors"
 func solve(a float64,b float64,c float64) ([]float64, error){
   result := make([]float64, 0, 3) 
