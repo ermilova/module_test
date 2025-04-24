@@ -77,9 +77,9 @@ func TestSolveNan(t *testing.T) {
 	assert.NotNil(t, err)
 }
 func TestSolveInf(t *testing.T) {
-	A := math.Inf()
-	B := math.Inf()
-	C := math.Inf()
+	A := math.Inf(0)
+	B := math.Inf(0)
+	C := math.Inf(0)
 	
 	_, err := solve(A, B, C)
 	
