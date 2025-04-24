@@ -20,8 +20,8 @@ func solve(a float64,b float64,c float64) ([]float64, error){
   if math.Abs(d) < epsilon {
     result = append(result, ((-1)* b) / (2 * a))
   } else if !math.IsNaN(math.Sqrt(d)) {
-    result = append(result, ((-1) * b - math.Sqrt(d)) / (2 * a))
     result = append(result, ((-1) * b + math.Sqrt(d)) / (2 * a))
+    result = append(result, ((-1) * b - math.Sqrt(d)) / (2 * a))
   }
   return result, nil
 }
