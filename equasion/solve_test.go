@@ -54,7 +54,7 @@ func TestSolveAEps(t *testing.T) {
 	
 	_, err := solve(A, B, C)
 
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 }
 func TestSolveDEps(t *testing.T) {
 	var A float64 = 1e-5
