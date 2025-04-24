@@ -1,5 +1,9 @@
 package Solve
-import "errors"
+import (
+  "errors"
+  "math"
+  )
+  
 func solve(a float64,b float64,c float64) ([]float64, error){
   result := make([]float64, 0, 3) 
   if a == 0 { 
@@ -9,8 +13,8 @@ func solve(a float64,b float64,c float64) ([]float64, error){
   if d == 0 {
     result = append(result, ((-1)* b) / (2 * a))
   } else if d > 0 {
-    result = append(result, ((-1) * b - d) / (2 * a))
-    result = append(result, ((-1) * b + d) / (2 * a)) 
+    result = append(result, ((-1) * b - math.Sqrt(d)) / (2 * a))
+    result = append(result, ((-1) * b + math.Sqrt(d)) / (2 * a)) 
   }
   return result, nil
 }
