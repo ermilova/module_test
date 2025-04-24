@@ -7,10 +7,10 @@ import (
 func solve(a float64,b float64,c float64) ([]float64, error){
   result := make([]float64, 0, 3) 
   epsilon := 1e-9
-  if math.IsNaN(A) || math.IsNaN(B) || math.IsNaN(C) {
+  if math.IsNaN(a) || math.IsNaN(b) || math.IsNaN(c) {
     return result, errors.New("One of parameters is NaN")
   }
-  if math.IsInf(A) || math.IsInf(B) || math.IsInf(C) {
+  if math.IsInf(a) || math.IsInf(b) || math.IsInf(c) {
     return result, errors.New("One of paramets is Inf")
   }
   if math.Abs(a) < epsilon { 
