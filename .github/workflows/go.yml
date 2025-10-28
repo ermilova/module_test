@@ -24,7 +24,7 @@ jobs:
         go-version: '1.24.x'
         
     - name: Build
-      run: cd app; go build -v ./... ; cd ..
+      run: cd good_abstracts; go build -v ./... ; cd ..
 
     - name: Test
-      run: cd app; go test -v ./... ; cd ..
+      run: cd good_abstracts; go test -v ./... ; cd ..
