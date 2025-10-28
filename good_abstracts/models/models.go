@@ -47,7 +47,7 @@ func (a Angle) Add(other interface{}) Angle {
 	case int:
 		return Angle{Degrees: a.Degrees + v}
 	default:
-		panic("unsupported type for addition with Angle")
+		panic("Неподдерживаемый тип для изменения Angle")
 	}
 }
 
@@ -58,7 +58,7 @@ func (a Angle) Sub(other interface{}) Angle {
 	case int:
 		return Angle{Degrees: a.Degrees - v}
 	default:
-		panic("unsupported type for subtraction with Angle")
+		panic("Неподдерживаемый тип для изменения Angle")
 	}
 }
 

@@ -17,7 +17,7 @@ func NewMovingObjectAdapter(uobj *uobject.UObject) *MovingObjectAdapter {
 func (m *MovingObjectAdapter) GetLocation() models.Point {
 	prop := m.uobj.GetProperty("location")
 	if prop == nil {
-		panic("location property not found")
+		panic("Не указан location")
 	}
 	return prop.(models.Point)
 }
@@ -27,7 +27,7 @@ func (m *MovingObjectAdapter) GetVelocity() models.Vector {
 	velocityProp := m.uobj.GetProperty("velocity")
 
 	if angleProp == nil || velocityProp == nil {
-		panic("angle or velocity property not found")
+		panic("Угол или скорость не указаны")
 	}
 
 	angle := angleProp.(models.Angle)
@@ -55,7 +55,7 @@ func NewRotatableObjectAdapter(uobj *uobject.UObject) *RotatableObjectAdapter {
 func (r *RotatableObjectAdapter) GetAngle() models.Angle {
 	prop := r.uobj.GetProperty("angle")
 	if prop == nil {
-		panic("angle property not found")
+		panic("Уголь не найден")
 	}
 	return prop.(models.Angle)
 }

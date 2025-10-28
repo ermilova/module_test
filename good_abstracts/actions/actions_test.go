@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
-// MockMovingObject для тестирования Move
+// MockMovingObject  Move
 type MockMovingObject struct {
 	mock.Mock
 }
@@ -26,7 +26,7 @@ func (m *MockMovingObject) SetLocation(newPoint models.Point) {
 	m.Called(newPoint)
 }
 
-// MockRotatableObject для тестирования Rotate
+// MockRotatableObject Rotate
 type MockRotatableObject struct {
 	mock.Mock
 }
@@ -41,10 +41,9 @@ func (m *MockRotatableObject) SetAngle(newAngle models.Angle) {
 }
 
 func TestMove(t *testing.T) {
-	t.Run("Execute moves object correctly", func(t *testing.T) {
+	t.Run("Move корректный", func(t *testing.T) {
 		mockObj := new(MockMovingObject)
 
-		// Настройка моков
 		initialLocation := models.Point{X: 10, Y: 20}
 		velocity := models.Vector{X: 5, Y: -3}
 		expectedNewLocation := models.Point{X: 15, Y: 17}
@@ -53,17 +52,15 @@ func TestMove(t *testing.T) {
 		mockObj.On("GetVelocity").Return(velocity)
 		mockObj.On("SetLocation", expectedNewLocation).Once()
 
-		// Выполнение
 		move := NewMove(mockObj)
 		move.Execute()
 
-		// Проверка
 		mockObj.AssertExpectations(t)
 	})
 }
 
 func TestRotate(t *testing.T) {
-	t.Run("Execute rotates object correctly", func(t *testing.T) {
+	t.Run("rotates корректный", func(t *testing.T) {
 		mockObj := new(MockRotatableObject)
 
 		// Настройка моков
@@ -82,7 +79,7 @@ func TestRotate(t *testing.T) {
 		mockObj.AssertExpectations(t)
 	})
 
-	t.Run("Execute with negative rotation", func(t *testing.T) {
+	t.Run("отрицательное вращение", func(t *testing.T) {
 		mockObj := new(MockRotatableObject)
 
 		initialAngle := models.Angle{Degrees: 45}

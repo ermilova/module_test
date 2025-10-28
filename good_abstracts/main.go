@@ -16,31 +16,30 @@ func printShipState(ship *uobject.UObject) {
 }
 
 func main() {
-	// Создаем космический корабль
 	ship := uobject.NewUObject()
 	ship.SetProperty("location", models.Point{X: 12, Y: 5})
-	ship.SetProperty("angle", models.Angle{Degrees: 45})
-	ship.SetProperty("velocity", 10.0) // Модуль скорости
+	ship.SetProperty("angle", models.Angle{Degrees: 155})
+	ship.SetProperty("velocity", 8.0) // Модуль скорости
 
-	fmt.Println("== INITIAL STATE ==")
+	fmt.Println("== Начало игры ==")
 	printShipState(ship)
 
-	// Двигаем корабль
+	// Движение
 	moveAdapter := adapters.NewMovingObjectAdapter(ship)
 	moveAction := actions.NewMove(moveAdapter)
 	moveAction.Execute()
-	fmt.Println("\n== AFTER MOVE ==")
+	fmt.Println("\n== После движения ==")
 	printShipState(ship)
 
-	// Поворачиваем корабль
+	// Поворот
 	rotateAdapter := adapters.NewRotatableObjectAdapter(ship)
 	rotateAction := actions.NewRotate(rotateAdapter)
-	rotateAction.Execute(models.Angle{Degrees: 15})
-	fmt.Println("\n== AFTER ROTATE +15° ==")
+	rotateAction.Execute(models.Angle{Degrees: 10})
+	fmt.Println("\n== После поворота на 10° ==")
 	printShipState(ship)
 
-	// Двигаем снова (с новым углом)
+	// Движение после поворота
 	moveAction.Execute()
-	fmt.Println("\n== AFTER SECOND MOVE ==")
+	fmt.Println("\n== После движения ==")
 	printShipState(ship)
 }

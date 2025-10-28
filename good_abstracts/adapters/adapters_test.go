@@ -9,7 +9,7 @@ import (
 )
 
 func TestMovingObjectAdapter(t *testing.T) {
-	t.Run("GetLocation returns correct location", func(t *testing.T) {
+	t.Run("GetLocation возвращает корректное значение", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		expected := models.Point{X: 10, Y: 20}
 		obj.SetProperty("location", expected)
@@ -20,7 +20,7 @@ func TestMovingObjectAdapter(t *testing.T) {
 		assert.Equal(t, expected, result)
 	})
 
-	t.Run("GetLocation panics when location not set", func(t *testing.T) {
+	t.Run("GetLocation panics", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		adapter := NewMovingObjectAdapter(obj)
 
@@ -29,7 +29,7 @@ func TestMovingObjectAdapter(t *testing.T) {
 		})
 	})
 
-	t.Run("GetVelocity calculates correct vector", func(t *testing.T) {
+	t.Run("GetVelocity вычисляет корректный вектор", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		obj.SetProperty("angle", models.Angle{Degrees: 0}) // 0 degrees = right direction
 		obj.SetProperty("velocity", 10.0)
@@ -41,7 +41,7 @@ func TestMovingObjectAdapter(t *testing.T) {
 		assert.Equal(t, models.Vector{X: 10, Y: 0}, result)
 	})
 
-	t.Run("GetVelocity with 90 degrees", func(t *testing.T) {
+	t.Run("GetVelocity и 90 градусов", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		obj.SetProperty("angle", models.Angle{Degrees: 90}) // 90 degrees = up direction
 		obj.SetProperty("velocity", 5.0)
@@ -53,7 +53,7 @@ func TestMovingObjectAdapter(t *testing.T) {
 		assert.Equal(t, models.Vector{X: 0, Y: 5}, result)
 	})
 
-	t.Run("SetLocation updates property", func(t *testing.T) {
+	t.Run("SetLocation обновляет значение", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		adapter := NewMovingObjectAdapter(obj)
 		newPoint := models.Point{X: 100, Y: 200}
@@ -66,7 +66,7 @@ func TestMovingObjectAdapter(t *testing.T) {
 }
 
 func TestRotatableObjectAdapter(t *testing.T) {
-	t.Run("GetAngle returns correct angle", func(t *testing.T) {
+	t.Run("GetAngle возвраает корректный угол", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		expected := models.Angle{Degrees: 45}
 		obj.SetProperty("angle", expected)
@@ -77,7 +77,7 @@ func TestRotatableObjectAdapter(t *testing.T) {
 		assert.Equal(t, expected, result)
 	})
 
-	t.Run("GetAngle panics when angle not set", func(t *testing.T) {
+	t.Run("GetAngle panics", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		adapter := NewRotatableObjectAdapter(obj)
 
@@ -86,7 +86,7 @@ func TestRotatableObjectAdapter(t *testing.T) {
 		})
 	})
 
-	t.Run("SetAngle updates property", func(t *testing.T) {
+	t.Run("SetAngle обновляет значение", func(t *testing.T) {
 		obj := uobject.NewUObject()
 		adapter := NewRotatableObjectAdapter(obj)
 		newAngle := models.Angle{Degrees: 90}

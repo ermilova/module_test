@@ -7,13 +7,13 @@ import (
 )
 
 func TestUObject(t *testing.T) {
-	t.Run("NewUObject creates empty object", func(t *testing.T) {
+	t.Run("NewUObject, создаем пустой объект", func(t *testing.T) {
 		obj := NewUObject()
 		assert.NotNil(t, obj)
 		assert.Nil(t, obj.GetProperty("nonexistent"))
 	})
 
-	t.Run("Set and Get property", func(t *testing.T) {
+	t.Run("Set и Get", func(t *testing.T) {
 		obj := NewUObject()
 
 		obj.SetProperty("test", "value")
@@ -22,7 +22,7 @@ func TestUObject(t *testing.T) {
 		assert.Equal(t, "value", result)
 	})
 
-	t.Run("Overwrite property", func(t *testing.T) {
+	t.Run("Перезапись", func(t *testing.T) {
 		obj := NewUObject()
 
 		obj.SetProperty("key", "old")
@@ -31,7 +31,7 @@ func TestUObject(t *testing.T) {
 		assert.Equal(t, "new", obj.GetProperty("key"))
 	})
 
-	t.Run("Multiple properties", func(t *testing.T) {
+	t.Run("Много значений", func(t *testing.T) {
 		obj := NewUObject()
 
 		obj.SetProperty("string", "text")

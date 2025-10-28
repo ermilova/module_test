@@ -30,7 +30,7 @@ func TestVector(t *testing.T) {
 }
 
 func TestAngle(t *testing.T) {
-	t.Run("Radians conversion", func(t *testing.T) {
+	t.Run("Конвертируем в радианы", func(t *testing.T) {
 		angle := Angle{Degrees: 180}
 
 		radians := angle.Radians()
@@ -38,7 +38,7 @@ func TestAngle(t *testing.T) {
 		assert.InEpsilon(t, math.Pi, radians, 0.0001)
 	})
 
-	t.Run("Normalize positive angle", func(t *testing.T) {
+	t.Run("Нормализация положительного угла", func(t *testing.T) {
 		angle := Angle{Degrees: 45}
 
 		normalized := angle.Normalized()
@@ -46,7 +46,7 @@ func TestAngle(t *testing.T) {
 		assert.Equal(t, Angle{Degrees: 45}, normalized)
 	})
 
-	t.Run("Normalize large angle", func(t *testing.T) {
+	t.Run("Нормализация", func(t *testing.T) {
 		angle := Angle{Degrees: 450}
 
 		normalized := angle.Normalized()
@@ -54,7 +54,7 @@ func TestAngle(t *testing.T) {
 		assert.Equal(t, Angle{Degrees: 90}, normalized)
 	})
 
-	t.Run("Normalize negative angle", func(t *testing.T) {
+	t.Run("Нормализация отрицательного угла", func(t *testing.T) {
 		angle := Angle{Degrees: -90}
 
 		normalized := angle.Normalized()
@@ -71,7 +71,7 @@ func TestAngle(t *testing.T) {
 		assert.Equal(t, Angle{Degrees: 45}, result)
 	})
 
-	t.Run("Add integer", func(t *testing.T) {
+	t.Run("Add int", func(t *testing.T) {
 		angle := Angle{Degrees: 30}
 
 		result := angle.Add(20)
@@ -87,7 +87,13 @@ func TestAngle(t *testing.T) {
 
 		assert.Equal(t, Angle{Degrees: 30}, result)
 	})
+	t.Run("Subtract int", func(t *testing.T) {
+		angle := Angle{Degrees: 30}
 
+		result := angle.Sub(20)
+
+		assert.Equal(t, Angle{Degrees: 10}, result)
+	})
 	t.Run("Equal with Angle", func(t *testing.T) {
 		angle1 := Angle{Degrees: 45}
 		angle2 := Angle{Degrees: 45}

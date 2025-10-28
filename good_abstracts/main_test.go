@@ -11,19 +11,19 @@ import (
 )
 
 func TestIntegration(t *testing.T) {
-	t.Run("Full ship movement workflow", func(t *testing.T) {
+	t.Run("Тестирование сценария движения и поворота", func(t *testing.T) {
 		// Создаем корабль как в main
 		ship := uobject.NewUObject()
 		ship.SetProperty("location", models.Point{X: 12, Y: 5})
-		ship.SetProperty("angle", models.Angle{Degrees: 45})
-		ship.SetProperty("velocity", 10.0)
+		ship.SetProperty("angle", models.Angle{Degrees: 155})
+		ship.SetProperty("velocity", 8.0)
 
 		// Проверяем начальное состояние
 		initialLocation := ship.GetProperty("location").(models.Point)
 		initialAngle := ship.GetProperty("angle").(models.Angle)
 
 		assert.Equal(t, models.Point{X: 12, Y: 5}, initialLocation)
-		assert.Equal(t, models.Angle{Degrees: 45}, initialAngle)
+		assert.Equal(t, models.Angle{Degrees: 155}, initialAngle)
 
 		// Двигаем корабль
 		moveAdapter := adapters.NewMovingObjectAdapter(ship)
@@ -32,16 +32,16 @@ func TestIntegration(t *testing.T) {
 
 		// Проверяем новое положение
 		locationAfterMove := ship.GetProperty("location").(models.Point)
-		assert.NotEqual(t, initialLocation, locationAfterMove)
+		assert.Equal(t, models.Point{X: 5, Y: 8}, locationAfterMove)
 
 		// Поворачиваем корабль
 		rotateAdapter := adapters.NewRotatableObjectAdapter(ship)
 		rotateAction := actions.NewRotate(rotateAdapter)
-		rotateAction.Execute(models.Angle{Degrees: 15})
+		rotateAction.Execute(models.Angle{Degrees: 10})
 
 		// Проверяем новый угол
 		angleAfterRotate := ship.GetProperty("angle").(models.Angle)
-		assert.Equal(t, models.Angle{Degrees: 60}, angleAfterRotate)
+		assert.Equal(t, models.Angle{Degrees: 165}, angleAfterRotate)
 
 		// Двигаем снова
 		moveAction.Execute()
