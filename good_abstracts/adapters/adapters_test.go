@@ -31,25 +31,23 @@ func TestMovingObjectAdapter(t *testing.T) {
 
 	t.Run("GetVelocity вычисляет корректный вектор", func(t *testing.T) {
 		obj := uobject.NewUObject()
-		obj.SetProperty("angle", models.Angle{Degrees: 0}) // 0 degrees = right direction
+		obj.SetProperty("angle", models.Angle{Degrees: 0})
 		obj.SetProperty("velocity", 10.0)
 
 		adapter := NewMovingObjectAdapter(obj)
 		result := adapter.GetVelocity()
 
-		// At 0 degrees, cos=1, sin=0, so vector should be (10, 0)
 		assert.Equal(t, models.Vector{X: 10, Y: 0}, result)
 	})
 
 	t.Run("GetVelocity и 90 градусов", func(t *testing.T) {
 		obj := uobject.NewUObject()
-		obj.SetProperty("angle", models.Angle{Degrees: 90}) // 90 degrees = up direction
+		obj.SetProperty("angle", models.Angle{Degrees: 90})
 		obj.SetProperty("velocity", 5.0)
 
 		adapter := NewMovingObjectAdapter(obj)
 		result := adapter.GetVelocity()
 
-		// At 90 degrees, cos=0, sin=1, so vector should be (0, 5)
 		assert.Equal(t, models.Vector{X: 0, Y: 5}, result)
 	})
 

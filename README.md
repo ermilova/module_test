@@ -1,3 +1,14 @@
+## Запуск тестов
+```
+cd good_abstracts/
+go test ./... -coverprofile coverage.txt 
+```
+
+## Проверка покрытия 
+```
+go tool cover -html=coverage.txt
+```
+
 
 Движение игровых объектов по полю
 

@@ -63,7 +63,6 @@ func TestRotate(t *testing.T) {
 	t.Run("rotates корректный", func(t *testing.T) {
 		mockObj := new(MockRotatableObject)
 
-		// Настройка моков
 		initialAngle := models.Angle{Degrees: 30}
 		deltaAngle := models.Angle{Degrees: 15}
 		expectedNewAngle := models.Angle{Degrees: 45}
@@ -71,11 +70,9 @@ func TestRotate(t *testing.T) {
 		mockObj.On("GetAngle").Return(initialAngle)
 		mockObj.On("SetAngle", expectedNewAngle).Once()
 
-		// Выполнение
 		rotate := NewRotate(mockObj)
 		rotate.Execute(deltaAngle)
 
-		// Проверка
 		mockObj.AssertExpectations(t)
 	})
 

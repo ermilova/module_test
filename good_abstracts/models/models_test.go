@@ -94,14 +94,14 @@ func TestAngle(t *testing.T) {
 
 		assert.Equal(t, Angle{Degrees: 10}, result)
 	})
-	t.Run("Equal with Angle", func(t *testing.T) {
+	t.Run("Equal Angle", func(t *testing.T) {
 		angle1 := Angle{Degrees: 45}
 		angle2 := Angle{Degrees: 45}
 
 		assert.True(t, angle1.Equal(angle2))
 	})
 
-	t.Run("Equal with integer", func(t *testing.T) {
+	t.Run("Equal int", func(t *testing.T) {
 		angle := Angle{Degrees: 45}
 
 		assert.True(t, angle.Equal(45))

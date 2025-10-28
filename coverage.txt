@@ -1,4 +1,4 @@
-mode: set
+mode: atomic
 module_test/Hello/hello.go:5.58,6.16 1 1
 module_test/Hello/hello.go:6.16,8.3 1 0
 module_test/Hello/hello.go:10.2,12.18 2 1
@@ -7,3 +7,14 @@ module_test/Hello/hello.go:15.17,16.18 1 0
 module_test/Hello/hello.go:17.16,18.19 1 0
 module_test/Hello/hello.go:19.10,20.64 1 0
 module_test/Hello/hello.go:23.2,23.33 1 1
+module_test/equasion/solution.go:7.61,10.54 3 8
+module_test/equasion/solution.go:10.54,12.4 1 1
+module_test/equasion/solution.go:13.3,13.63 1 7
+module_test/equasion/solution.go:13.63,15.4 1 1
+module_test/equasion/solution.go:16.3,16.28 1 6
+module_test/equasion/solution.go:16.28,18.4 1 1
+module_test/equasion/solution.go:19.3,20.28 2 5
+module_test/equasion/solution.go:20.28,22.4 1 1
+module_test/equasion/solution.go:22.9,22.39 1 4
+module_test/equasion/solution.go:22.39,25.4 2 3
+module_test/equasion/solution.go:26.3,26.21 1 5
