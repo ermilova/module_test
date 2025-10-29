@@ -1,4 +1,7 @@
 mode: atomic
+good_abstracts/uobject/uobject.go:7.28,11.2 1 4
+good_abstracts/uobject/uobject.go:13.60,15.2 1 6
+good_abstracts/uobject/uobject.go:17.67,19.2 1 6
 good_abstracts/main.go:11.44,16.2 4 0
 good_abstracts/main.go:18.13,45.2 19 0
 good_abstracts/adapters/adapters.go:13.73,15.2 1 5
@@ -14,6 +17,10 @@ good_abstracts/adapters/adapters.go:55.58,57.17 2 2
 good_abstracts/adapters/adapters.go:57.17,58.40 1 1
 good_abstracts/adapters/adapters.go:60.2,60.28 1 1
 good_abstracts/adapters/adapters.go:63.66,65.2 1 1
+good_abstracts/actions/actions.go:12.56,14.2 1 1
+good_abstracts/actions/actions.go:16.26,22.2 4 1
+good_abstracts/actions/actions.go:28.66,30.2 1 2
+good_abstracts/actions/actions.go:32.51,36.2 3 2
 good_abstracts/models/models.go:9.36,14.2 1 1
 good_abstracts/models/models.go:20.42,25.2 1 1
 good_abstracts/models/models.go:31.34,33.2 1 1
@@ -32,10 +39,3 @@ good_abstracts/models/models.go:65.46,66.27 1 2
 good_abstracts/models/models.go:67.13,68.32 1 1
 good_abstracts/models/models.go:69.11,70.24 1 1
 good_abstracts/models/models.go:71.10,72.15 1 0
-good_abstracts/actions/actions.go:12.56,14.2 1 1
-good_abstracts/actions/actions.go:16.26,22.2 4 1
-good_abstracts/actions/actions.go:28.66,30.2 1 2
-good_abstracts/actions/actions.go:32.51,36.2 3 2
-good_abstracts/uobject/uobject.go:7.28,11.2 1 4
-good_abstracts/uobject/uobject.go:13.60,15.2 1 6
-good_abstracts/uobject/uobject.go:17.67,19.2 1 6
