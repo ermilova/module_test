@@ -12,3 +12,7 @@ type RotatableObject interface {
 	GetAngle() models.Angle
 	SetAngle(newAngle models.Angle)
 }
+
+type CommandInterface interface {
+	Execute() error
+}
